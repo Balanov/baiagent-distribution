@@ -4,9 +4,9 @@
 
 Проект закрывает третий контур экосистемы `1 ⇄ 2 ⇄ 3`: после аналитики и реализации продукта он помогает довести работающее предложение до рынка. Ядро исследования унаследовано от [BAIagent Director](https://github.com/Balanov/baiagent-director); распределительный движок детерминирован и не требует облачной модели.
 
-**[Скачать BAIagent Distribution 0.1.0 для Windows x64](https://github.com/Balanov/baiagent-distribution/releases/download/v0.1.0/BAIagent-Distribution-Setup-Windows-0.1.0-x64.exe)** · [Все платформы и исходный релиз](https://github.com/Balanov/baiagent-distribution/releases/tag/v0.1.0)
+**[Открыть веб-версию для владельцев — owners.startpervyh.ru](https://owners.startpervyh.ru/)** · **[Скачать BAIagent Distribution 0.1.0 для Windows x64](https://github.com/Balanov/baiagent-distribution/releases/download/v0.1.0/BAIagent-Distribution-Setup-Windows-0.1.0-x64.exe)** · [Все платформы и исходный релиз](https://github.com/Balanov/baiagent-distribution/releases/tag/v0.1.0)
 
-SHA-256 Windows installer: `bbf67aed767d1f4f0c7812b88f7dae60ee689177c0577a40d4f47a9fba1d037c`. CI успешно собрал Windows, Linux, macOS и веб-пакет; установка каждого нативного артефакта вручную отдельно не проверялась. Установщики не подписаны Authenticode / не нотаризованы.
+Веб-версия проверена публичным сценарием: исследование «Баланов.ПРО», маршрут из 10 каналов, 5 бартерных офферов, локальный автопилот и скачивание потока. SHA-256 Windows installer: `bbf67aed767d1f4f0c7812b88f7dae60ee689177c0577a40d4f47a9fba1d037c`. CI успешно собрал Windows, Linux, macOS и веб-пакет; установка каждого нативного артефакта вручную отдельно не проверялась. Установщики не подписаны Authenticode / не нотаризованы.
 
 ## Что уже реализовано
 
