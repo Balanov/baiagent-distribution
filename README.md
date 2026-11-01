@@ -67,9 +67,9 @@ npm run dist:mac       # macOS
 
 Содержимое `dist/` — статический веб-пакет для поддомена владельцев. Workflow `.github/workflows/pages.yml` проверяет проект и публикует его через GitHub Pages при каждом изменении `main`.
 
-Целевой адрес — `https://owners.startpervyh.ru/`. Для подключения нужен DNS `CNAME owners → balanov.github.io`, после чего домен указывается в настройках GitHub Pages. До фактической настройки DNS рабочим публичным адресом остаётся URL, выданный GitHub Pages.
+Рабочий адрес — `https://owners.startpervyh.ru/`. DNS `CNAME owners → balanov.github.io` настроен, домен подключён к GitHub Pages, сертификат выпущен и обязательный HTTPS включён. Последний workflow публикации завершён успешно.
 
-Вход для страницы команды подготовлен как React-компонент `integrations/TeamDistributionCta.jsx`: «Уже владеете продуктом?» ведёт в рабочий веб-инструмент. Сам исходный проект `balanov.pro/team/` в этом репозитории не находится.
+Вход «Уже владеете продуктом?» встроен в живую страницу `https://balanov.pro/team/` между главным экраном и блоком «Один владелец на продукт». Независимая HTML-версия хранится в `integrations/team-distribution-entry.html`; она не изменяет собранный JavaScript сайта команды. Перед установкой создана серверная резервная копия `team/index.html.backup-owners-20261101`. Переход в инструмент и мобильная вёрстка проверены на живых страницах. React-компонент `integrations/TeamDistributionCta.jsx` сохранён для будущего включения в исходный проект команды.
 
 ## Формат outbox
 
