@@ -13,7 +13,7 @@ import { OWN_PRODUCTS } from '../shared/distribution-catalog.js';
 import './styles.css';
 
 const DESKTOP = typeof window !== 'undefined' && Boolean(window.director?.isDesktop);
-const REPOSITORY_URL = 'https://github.com/Balanov/baiagent-distribution';
+const RELEASES_URL = 'https://github.com/Balanov/baiagent-distribution/releases/latest';
 const STAGE_TARGETS = { site: 15, pages: 38, external: 57, model: 72, thinking: 88, verification: 97 };
 const WORK_STEPS = [
   { title: 'Узнаю продукт', text: 'Читаю сайт, предложения и открытые материалы.', stages: ['site'] },
@@ -180,7 +180,7 @@ function App() {
           {OWN_PRODUCTS.map(product => <button key={product.id} onClick={() => start(null, product.url)}><span>{product.name}</span><ArrowUpRight size={14} /></button>)}
         </div>
         <div className="promises"><span><Check size={15} /> Локально, без токенов</span><span><Check size={15} /> Автономно по политике</span><span><Check size={15} /> 1 ⇄ 2 ⇄ 3</span></div>
-        {!DESKTOP && <a className="hero-download" href={REPOSITORY_URL} target="_blank" rel="noreferrer"><Monitor size={20} /><span><strong>Локальный агент для Windows — исходный код</strong><small>Запуск и сборка на вашем компьютере · GitHub</small></span><ExternalLink size={17} /></a>}
+        {!DESKTOP && <a className="hero-download" href={RELEASES_URL} target="_blank" rel="noreferrer"><Monitor size={20} /><span><strong>Скачать локального агента для Windows</strong><small>Исследование, документы и модель — на вашем компьютере</small></span><Download size={17} /></a>}
       </section>
       <section className="welcome-preview" aria-label="Что делает агент">
         <FlowVisual active />
