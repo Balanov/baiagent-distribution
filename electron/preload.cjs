@@ -1,0 +1,20 @@
+const { contextBridge, ipcRenderer } = require('electron');
+
+contextBridge.exposeInMainWorld('director', {
+  isDesktop: true,
+  research: (url, language) => ipcRenderer.invoke('director:research', { url, language }),
+  addDocuments: () => ipcRenderer.invoke('director:add-documents'),
+  addFolder: () => ipcRenderer.invoke('director:add-folder'),
+  forgetFolder: () => ipcRenderer.invoke('director:forget-folder'),
+  advisor: payload => ipcRenderer.invoke('director:advisor', payload),
+  createHypothesis: payload => ipcRenderer.invoke('director:create-hypothesis', payload),
+  resetSession: () => ipcRenderer.invoke('director:reset-session'),
+  savePilot: opportunityId => ipcRenderer.invoke('director:save-pilot', opportunityId),
+  saveDistribution: payload => ipcRenderer.invoke('distribution:save', payload),
+  openExternal: url => ipcRenderer.invoke('director:open-external', url),
+  onProgress: callback => {
+    const listener = (_event, progress) => callback(progress);
+    ipcRenderer.on('director:progress', listener);
+    return () => ipcRenderer.removeListener('director:progress', listener);
+  },
+});
