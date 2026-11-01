@@ -61,23 +61,34 @@ try {
     href: location.href,
     title: document.title,
     products: document.querySelectorAll('.own-products button').length,
+    teamLinks: document.querySelectorAll('.team-link').length,
     desktop: Boolean(window.director?.isDesktop),
     saveDistribution: typeof window.director?.saveDistribution,
     overflow: document.documentElement.scrollWidth > innerWidth,
     heading: document.querySelector('h1')?.textContent || ''
   })`);
   console.log('UI_CONTRACT', JSON.stringify(contract));
-  assert.equal(contract.title, 'BAIagent Distribution — путь продукта к рынку');
+  assert.equal(contract.title, 'BAIagent Distribution — инструмент владельца продукта');
   assert.equal(contract.products, 6);
+  assert.equal(contract.teamLinks, 1);
   assert.equal(contract.desktop, true);
   assert.equal(contract.saveDistribution, 'function');
   assert.equal(contract.overflow, false);
-  assert.match(contract.heading, /Продукт сам находит/);
+  assert.match(contract.heading, /Владей продуктом/);
+  assert.match(contract.heading, /Агент найдёт/);
   await evaluate('document.fonts.ready');
   await delay(400);
   const image = await call('Page.captureScreenshot', { format: 'png', captureBeyondViewport: false });
   await fs.writeFile(screenshot, Buffer.from(image.data, 'base64'));
-  console.log(JSON.stringify({ status: 'passed', ...contract, screenshot }));
+  await call('Emulation.setDeviceMetricsOverride', { width: 390, height: 844, deviceScaleFactor: 1, mobile: true });
+  await delay(300);
+  const mobile = await evaluate(`({ width: innerWidth, overflow: document.documentElement.scrollWidth > innerWidth, heading: document.querySelector('h1')?.textContent || '' })`);
+  assert.equal(mobile.width, 390);
+  assert.equal(mobile.overflow, false);
+  const mobileScreenshot = path.join(root, 'validation', 'distribution-home-mobile.png');
+  const mobileImage = await call('Page.captureScreenshot', { format: 'png', captureBeyondViewport: false });
+  await fs.writeFile(mobileScreenshot, Buffer.from(mobileImage.data, 'base64'));
+  console.log(JSON.stringify({ status: 'passed', ...contract, mobile, screenshot, mobileScreenshot }));
 } finally {
   if (socket) socket.close();
   stop(desktop);

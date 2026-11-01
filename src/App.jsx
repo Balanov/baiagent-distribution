@@ -155,32 +155,35 @@ function App() {
 
   const currentStep = Math.max(0, WORK_STEPS.findIndex(step => step.stages.includes(progress?.stage || 'site')));
 
-  return <div className="app-shell">
+  return <div className={`app-shell mode-${phase}`}>
     <header className="topbar">
       <Brand />
-      <div className="trust"><LockKeyhole size={15} /><span>{DESKTOP ? 'Локальный ИИ · 0 облачных токенов' : 'Веб-запуск · полный локальный агент в Windows'}</span></div>
+      <div className="topbar-actions">
+        <button className="team-link" onClick={() => openLink('https://balanov.pro/team/')}>Команда Баланова<ArrowUpRight size={14} /></button>
+        <div className="trust"><LockKeyhole size={15} /><span>{DESKTOP ? 'Локальный ИИ · 0 облачных токенов' : 'Веб-запуск · локальный агент в Windows'}</span></div>
+      </div>
     </header>
 
     {(phase === 'idle' || phase === 'error') && <main className="welcome">
       <section className="welcome-copy">
-        <div className="eyebrow"><span className="live-dot" /> Autonomous distribution · local-first</div>
-        <h1>Продукт сам находит<br /><span>путь к рынку.</span></h1>
-        <p className="lead">Единый контур аналитики, реализации и распространения. Агент исследует продукт, выбирает каналы, собирает взаимовыгодный бартер и запускает локальный поток — без обязательного оператора и оплаты токенов.</p>
+        <div className="eyebrow"><span className="live-dot" /> BAIagent Distribution · для владельцев продуктов</div>
+        <h1>Владей продуктом.<br /><span>Агент найдёт<br />путь к рынку.</span></h1>
+        <p className="lead">Поставьте распространение на поток: агент изучит продукт, выберет каналы, предложит взаимный бартер и соберёт исполняемый локальный поток. Вы управляете результатом, а не ручной рутиной.</p>
         <form className="launch-form" onSubmit={start}>
-          <label htmlFor="product-url">Сайт продукта — свой или любой другой</label>
+          <label htmlFor="product-url">Сайт вашего продукта</label>
           <div className="url-control">
             <Globe2 size={21} />
             <input ref={inputRef} id="product-url" type="text" inputMode="url" autoComplete="url" placeholder="например, baiagent.ru" value={url} onChange={event => setUrl(event.target.value)} autoFocus />
-            <button type="submit" disabled={!url.trim()}><span>Запустить агента</span><ArrowRight size={20} /></button>
+            <button type="submit" disabled={!url.trim()}><span>Найти путь к рынку</span><ArrowRight size={20} /></button>
           </div>
         </form>
         {error && <div className="inline-error" role="alert">{error}<span>Проверьте адрес и доступность сайта.</span></div>}
-        <div className="own-products-heading"><span>Продукты экосистемы — запуск в один клик</span></div>
+        <div className="own-products-heading"><span>Или запустите продукт экосистемы</span></div>
         <div className="own-products" aria-label="Продукты экосистемы">
           {OWN_PRODUCTS.map(product => <button key={product.id} onClick={() => start(null, product.url)}><span>{product.name}</span><ArrowUpRight size={14} /></button>)}
         </div>
-        <div className="promises"><span><Check size={15} /> Локально, без токенов</span><span><Check size={15} /> Автономно по политике</span><span><Check size={15} /> 1 ⇄ 2 ⇄ 3</span></div>
-        {!DESKTOP && <a className="hero-download" href={RELEASES_URL} target="_blank" rel="noreferrer"><Monitor size={20} /><span><strong>Скачать локального агента для Windows</strong><small>Исследование, документы и модель — на вашем компьютере</small></span><Download size={17} /></a>}
+        <div className="promises"><span><Check size={15} /> Локально, без токенов</span><span><Check size={15} /> Канал, шаг и stop-условие</span><span><Check size={15} /> Контур 1 ⇄ 2 ⇄ 3</span></div>
+        {!DESKTOP && <a className="hero-download" href={RELEASES_URL} target="_blank" rel="noreferrer"><Monitor size={20} /><span><strong>Поставить локального агента на Windows</strong><small>Исследование, документы и модель — на вашем компьютере</small></span><Download size={17} /></a>}
       </section>
       <section className="welcome-preview" aria-label="Что делает агент">
         <FlowVisual active />
