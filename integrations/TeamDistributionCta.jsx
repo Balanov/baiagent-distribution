@@ -14,10 +14,10 @@ export default function TeamDistributionCta() {
       `}</style>
       <div className="distribution-owner-cta__copy">
         <p className="distribution-owner-cta__eyebrow">BAIagent Distribution · уже в релизе</p>
-        <h2 id="distribution-owner-title">Уже владеете продуктом?</h2>
-        <p className="distribution-owner-cta__text">Запустите агента распространения: паспорт продукта, приоритетные каналы, взаимный бартер и локальный поток. Первый шаг и критерий остановки — по каждому каналу.</p>
+        <h2 id="distribution-owner-title">Инфраструктура владельца уже готова</h2>
+        <p className="distribution-owner-cta__text">Продукт, свои модели, кластер и агент распространения — в одной рабочей системе. Владелец возглавляет процесс и получает каналы, бартер и локальный поток действий.</p>
       </div>
-      <a className="distribution-owner-cta__link" href="https://owners.startpervyh.ru/">Найти путь к рынку&nbsp; →</a>
+      <a className="distribution-owner-cta__link" href="https://owners.startpervyh.ru/">Открыть систему владельца&nbsp; →</a>
     </section>
   );
 }
