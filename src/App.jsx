@@ -193,14 +193,14 @@ function App() {
         <div className="preview-card">
           <div className="preview-top"><span>От цели — к рынку</span><span className="preview-badge">одна система</span></div>
           {[
-            ['ВЫ', 'Результат, ограничения и критерии приёмки'],
-            ['01', 'UNTIL: исследование, приоритет и ТЗ'],
-            ['02', 'Реализация и независимая приёмка'],
-            ['03', 'Release candidate с проверяемым следом'],
-            ['04', 'Distribution: каналы, бартер и outbox'],
+            ['ВЫ', 'Задаёте результат и ограничения'],
+            ['01', 'Система изучает продукт, клиентов и рынок'],
+            ['02', 'Выбирает приоритет и готовит изменение'],
+            ['03', 'Проверяет результат и предлагает следующий шаг'],
+            ['04', 'Продвигает продукт и собирает обратную связь'],
           ].map(([number, text]) => <div className="preview-step" key={number}><span className="step-number">{number}</span><span>{text}</span></div>)}
-          <div className="preview-cycle-proof"><CheckCircle2 size={17} /><span>Изменение кода: FAIL → ACTIVATION_TEST_OK</span></div>
-          <div className="preview-bottom"><ShieldCheck size={18} /><span>Локальный кандидат — не production-деплой. Внешние действия — только в выданных правах.</span></div>
+          <div className="preview-cycle-proof"><CheckCircle2 size={17} /><span>Результат каждого цикла можно проверить</span></div>
+          <div className="preview-bottom"><ShieldCheck size={18} /><span>Изменения сначала проверяются локально. Внешние действия — только с вашего разрешения.</span></div>
         </div>
       </section>
     </main>}
