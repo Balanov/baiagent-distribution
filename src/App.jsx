@@ -11,6 +11,8 @@ import {
 } from '../shared/distribution.js';
 import { OWN_PRODUCTS } from '../shared/distribution-catalog.js';
 import './styles.css';
+import './product-cycle.css';
+import ProductCycleBridge from './ProductCycleBridge.jsx';
 
 const DESKTOP = typeof window !== 'undefined' && Boolean(window.director?.isDesktop);
 const RELEASES_URL = 'https://github.com/Balanov/baiagent-distribution/releases/latest';
@@ -168,7 +170,8 @@ function App() {
       <section className="welcome-copy">
         <div className="eyebrow"><span className="live-dot" /> BAIagent Distribution · для владельцев продуктов</div>
         <h1>Владей продуктом.<br /><span>Агент найдёт<br />путь к рынку.</span></h1>
-        <p className="lead">Поставьте распространение на поток: агент изучит продукт, выберет каналы, предложит взаимный бартер и соберёт исполняемый локальный поток. Вы управляете результатом, а не ручной рутиной.</p>
+        <p className="lead">Вы задаёте результат и ограничения — не координируете каждый шаг команды. UNTIL ведёт продуктовую работу от исследования до независимой приёмки. Здесь агент продолжает путь к рынку: каналы, бартер и локальный поток продвижения.</p>
+        <ProductCycleBridge />
         <form className="launch-form" onSubmit={start}>
           <label htmlFor="product-url">Сайт вашего продукта</label>
           <div className="url-control">
@@ -182,20 +185,22 @@ function App() {
         <div className="own-products" aria-label="Продукты экосистемы">
           {OWN_PRODUCTS.map(product => <button key={product.id} onClick={() => start(null, product.url)}><span>{product.name}</span><ArrowUpRight size={14} /></button>)}
         </div>
-        <div className="promises"><span><Check size={15} /> Локально, без токенов</span><span><Check size={15} /> Канал, шаг и stop-условие</span><span><Check size={15} /> Контур 1 ⇄ 2 ⇄ 3</span></div>
+        <div className="promises"><span><Check size={15} /> Локально, без токенов</span><span><Check size={15} /> Канал, шаг и stop-условие</span><span><Check size={15} /> Права для внешних действий</span></div>
         {!DESKTOP && <a className="hero-download" href={RELEASES_URL} target="_blank" rel="noreferrer"><Monitor size={20} /><span><strong>Поставить локального агента на Windows</strong><small>Исследование, документы и модель — на вашем компьютере</small></span><Download size={17} /></a>}
       </section>
-      <section className="welcome-preview" aria-label="Что делает агент">
+      <section className="welcome-preview" aria-label="Как система ведёт продукт к рынку">
         <FlowVisual active />
         <div className="preview-card">
-          <div className="preview-top"><span>Один запуск</span><span className="preview-badge">рабочий поток</span></div>
+          <div className="preview-top"><span>От цели — к рынку</span><span className="preview-badge">одна система</span></div>
           {[
-            ['01', 'Паспорт продукта и допуск к распространению'],
-            ['02', 'Приоритетные каналы и конкретные первые действия'],
-            ['03', 'Бартер: ценность в обмен на доступ к аудитории'],
-            ['04', 'Автопилот, обращения, outbox и метрики результата'],
+            ['ВЫ', 'Результат, ограничения и критерии приёмки'],
+            ['01', 'UNTIL: исследование, приоритет и ТЗ'],
+            ['02', 'Реализация и независимая приёмка'],
+            ['03', 'Release candidate с проверяемым следом'],
+            ['04', 'Distribution: каналы, бартер и outbox'],
           ].map(([number, text]) => <div className="preview-step" key={number}><span className="step-number">{number}</span><span>{text}</span></div>)}
-          <div className="preview-bottom"><ShieldCheck size={18} /><span>Не усиливает неподтверждённые идеи. Не выдаёт отправку за выручку.</span></div>
+          <div className="preview-cycle-proof"><CheckCircle2 size={17} /><span>Изменение кода: FAIL → ACTIVATION_TEST_OK</span></div>
+          <div className="preview-bottom"><ShieldCheck size={18} /><span>Локальный кандидат — не production-деплой. Внешние действия — только в выданных правах.</span></div>
         </div>
       </section>
     </main>}
