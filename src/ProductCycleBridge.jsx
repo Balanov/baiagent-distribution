@@ -1,17 +1,31 @@
-import { ArrowUpRight, GitBranch, ShieldCheck } from 'lucide-react';
+import { ArrowLeft, ArrowRight, ArrowUpRight, Repeat2, UserRound } from 'lucide-react';
 
 export default function ProductCycleBridge() {
-  return <section className="owner-until-bridge" aria-label="Продуктовая работа в UNTIL">
-    <div className="owner-until-heading">
-      <span><GitBranch size={15} /> Сначала продукт. Затем рынок.</span>
-      <a href="https://balanov.pro/until/" target="_blank" rel="noopener noreferrer">Как система ведёт продукт <ArrowUpRight size={14} /></a>
+  return <section className="owner-until-bridge" aria-labelledby="owner-system-title">
+    <div className="owner-system-heading">
+      <span className="owner-system-badge"><Repeat2 size={14} /> Автономный контур</span>
+      <strong id="owner-system-title">Две системы. Один цикл.</strong>
     </div>
-    <p>Система изучает продукт, клиентов и рынок, выбирает приоритет, реализует изменение и проверяет результат. Затем начинает следующий цикл.</p>
-    <div className="owner-until-metrics" aria-label="Что система делает с продуктом">
-      <div><strong>Изучает</strong><span>продукт, клиентов и рынок</span></div>
-      <div><strong>Реализует</strong><span>выбранное изменение продукта</span></div>
-      <div><strong>Проверяет</strong><span>результат перед следующим шагом</span></div>
+    <div className="owner-system-flow">
+      <div className="owner-system-owner">
+        <span className="owner-system-avatar"><UserRound size={24} /></span>
+        <strong>Владелец продукта</strong>
+        <span>Задаёт результат<br />и ограничения</span>
+      </div>
+      <span className="owner-system-input" aria-hidden="true"><ArrowRight size={21} /></span>
+      <div className="owner-system-pair">
+        <a className="owner-system-node owner-system-node--until" href="https://balanov.pro/until/" target="_blank" rel="noopener noreferrer" aria-label="UNTIL — самостоятельный цикл улучшения продукта">
+          <span className="owner-system-node-label">UNTIL <ArrowUpRight size={13} /></span>
+          <strong>Улучшает<br />продукт</strong>
+          <span className="owner-system-node-copy">Сам исследует,<br />реализует и проверяет</span>
+        </a>
+        <span className="owner-system-loop-arrows" aria-hidden="true"><ArrowRight size={18} /><ArrowLeft size={18} /></span>
+        <div className="owner-system-node owner-system-node--distribution">
+          <span className="owner-system-node-label">DISTRIBUTION</span>
+          <strong>Продвигает<br />продукт</strong>
+          <span className="owner-system-node-copy">Сам изучает рынок<br />и привлекает клиентов</span>
+        </div>
+      </div>
     </div>
-    <div className="owner-until-proof"><ShieldCheck size={15} /><span>Код и результаты работы открыты для проверки.</span></div>
   </section>;
 }
