@@ -1,9 +1,0 @@
-# /.well-known/agents.txt — IETF draft-car-agents-txt-wellknown-00
-Origin: https://owners.startpervyh.ru/
-Contact: office@balanov.pro
-Crawl: allowed
-Attribution: required
-Content-Briefing: https://owners.startpervyh.ru/llms.txt
-Content-Briefing-Full: https://owners.startpervyh.ru/llms-full.txt
-Agent-Card: https://owners.startpervyh.ru/.well-known/agent-card.json
-Agents-JSON: https://owners.startpervyh.ru/.well-known/agents.json
