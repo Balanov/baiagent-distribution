@@ -1,0 +1,62 @@
+# https://owners.startpervyh.ru/
+# Сгенерировано 2026-11-15 · экосистема Баланова
+
+User-agent: *
+Allow: /
+
+# Машинные агенты и ИИ-краулеры: содержимое открыто для чтения,
+# цитирования и построения RAG-корпусов. Счётчик Метрики не мешает.
+User-agent: GPTBot
+Allow: /
+User-agent: ChatGPT-User
+Allow: /
+User-agent: OAI-SearchBot
+Allow: /
+User-agent: ClaudeBot
+Allow: /
+User-agent: Claude-User
+Allow: /
+User-agent: Claude-SearchBot
+Allow: /
+User-agent: anthropic-ai
+Allow: /
+User-agent: PerplexityBot
+Allow: /
+User-agent: Perplexity-User
+Allow: /
+User-agent: Google-Extended
+Allow: /
+User-agent: Googlebot
+Allow: /
+User-agent: YandexBot
+Allow: /
+User-agent: CCBot
+Allow: /
+User-agent: Bytespider
+Allow: /
+User-agent: meta-externalagent
+Allow: /
+User-agent: Applebot-Extended
+Allow: /
+User-agent: Amazonbot
+Allow: /
+User-agent: cohere-ai
+Allow: /
+User-agent: YouBot
+Allow: /
+User-agent: Diffbot
+Allow: /
+User-agent: MistralAI-User
+Allow: /
+User-agent: Timpibot
+Allow: /
+User-agent: TelegramBot
+Allow: /
+
+Disallow: /cgi-bin/
+Disallow: /.git/
+Disallow: /backup
+Disallow: /backups
+Disallow: /old/
+
+Sitemap: https://owners.startpervyh.ru/sitemap.xml

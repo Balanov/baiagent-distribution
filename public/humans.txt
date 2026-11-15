@@ -1,0 +1,18 @@
+/* TEAM */
+Owner: Антон Николаевич Баланов (Anton Balanov)
+Role: разработчик продуктов и ИИ-решений
+Site: https://owners.startpervyh.ru/
+Profile: https://balanov.pro/
+
+/* SITE */
+Name: BAIagent Distribution — инструмент владельца продукта
+Language: ru
+Description: Система владельца продукта: evidence-based паспорт, допуск к распространению, каналы, бартерные офферы, локальный поток действий и машинный outbox.
+
+/* CONTACT */
+Email: office@balanov.pro
+
+/* NOTES */
+Материалы сайта свободны для чтения, цитирования и построения RAG-корпусов
+с указанием авторства. Файлы llms.txt и llms-full.txt содержат то же
+содержимое в машинном виде.

@@ -1,0 +1,58 @@
+{
+  "$schema": "https://agents-txt.com/schema/agents.json",
+  "version": "1.0",
+  "site": {
+    "name": "BAIagent Distribution — инструмент владельца продукта",
+    "url": "https://owners.startpervyh.ru/",
+    "summary": "Система владельца продукта: evidence-based паспорт, допуск к распространению, каналы, бартерные офферы, локальный поток действий и машинный outbox.",
+    "language": "ru",
+    "owner": {
+      "type": "Organization",
+      "name": "Антон Николаевич Баланов",
+      "url": "https://balanov.pro/",
+      "sameAs": [
+        "https://github.com/Balanov",
+        "https://balanov.pro/all/"
+      ],
+      "email": "office@balanov.pro"
+    }
+  },
+  "capabilities": {
+    "contentBriefing": {
+      "available": true,
+      "summary": "https://owners.startpervyh.ru/llms.txt",
+      "fullText": "https://owners.startpervyh.ru/llms-full.txt"
+    },
+    "identity": {
+      "available": true,
+      "agentCard": "https://owners.startpervyh.ru/.well-known/agent-card.json",
+      "person": "https://owners.startpervyh.ru/.well-known/agent.json"
+    },
+    "search": {
+      "available": true,
+      "sitemap": "https://owners.startpervyh.ru/sitemap.xml"
+    }
+  },
+  "protocols": {
+    "mcp": {
+      "supported": false,
+      "reason": "MCP-эндпоинт не выставляется"
+    },
+    "a2aTasks": {
+      "supported": false,
+      "reason": "A2A-задачи не выполняются, только карточка"
+    },
+    "payments": {
+      "supported": false,
+      "reason": "платежные протоколы не используются"
+    }
+  },
+  "policy": {
+    "crawling": "allowed",
+    "attribution": "required",
+    "attributionText": "© Антон Николаевич Баланов, https://balanov.pro/",
+    "contact": "office@balanov.pro",
+    "rateLimit": "requests_per_second: 1"
+  },
+  "generatedAt": "2026-11-15T09:38:45.401018+00:00"
+}

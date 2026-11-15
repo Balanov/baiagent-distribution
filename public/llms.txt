@@ -1,0 +1,22 @@
+# BAIagent Distribution — инструмент владельца продукта
+
+> Система владельца продукта: evidence-based паспорт, допуск к распространению, каналы, бартерные офферы, локальный поток действий и машинный outbox.
+
+## Продукты
+
+- [Распространение продукта](https://owners.startpervyh.ru/): Каналы, бартер, outbox и метрики для владельца цифрового продукта.
+
+## Об авторе
+
+- [Антон Николаевич Баланов](https://balanov.pro/): разработчик продуктов и ИИ-решений, автор и разработчик продукта.
+- Открытый код и репозитории: https://github.com/Balanov
+
+## Контакты
+
+- Почта: office@balanov.pro
+
+## Файлы для машин
+
+- Полный текст: https://owners.startpervyh.ru/llms-full.txt
+- Возможности сайта: https://owners.startpervyh.ru/agents.txt
+- Карточка агента: https://owners.startpervyh.ru/.well-known/agent-card.json
